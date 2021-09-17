@@ -10,6 +10,15 @@ Vue.config.productionTip = false
 
 Vue.use(ElementUI)
 
+// 图片懒加载
+import VueLazyLoad from 'vue-lazyload'
+Vue.use(VueLazyLoad, {
+  preLoad: 1,
+  error: require('./assets/image-error.png'),
+  loading: require('./assets/image-loading.gif'),
+  attempt: 2,
+})
+
 // Base64支持
 import { Base64 } from "js-base64";
 Vue.prototype.$base64 = Base64

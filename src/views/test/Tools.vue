@@ -3,7 +3,8 @@
         工具测试
         <span v-hasLogin>登录可见</span>
         <el-divider></el-divider>
-        <img style="width:30px;height:30px;" v-errorImg src="https://www.baidu.com/img/flexible/logo/pc/result2.png" alt="图片">
+        <!-- 背景图 v-lazy:background-image = "" -->
+        <img v-lazy="testImage" :key="testImage" style="width:30px;height:30px;" alt="图片">
         <el-divider></el-divider>
         <el-empty description="找不到相关数据"></el-empty>
     </div>
@@ -13,7 +14,9 @@
 export default {
     components: {},
     data() {
-        return {};
+        return {
+            testImage: "https://www.baidu.com/img/flexible/logo/pc/result2.png",
+        };
     },
     computed: {},
     mounted() {
@@ -24,10 +27,10 @@ export default {
         });
     },
     created() {
-        console.log('参数：'+this.$route.query.ids);
+        console.log("参数：" + this.$route.query.ids);
         console.log("是否登录：" + this.$func.checkIsLogin());
-        let base64 = this.$base64.encode('abc');
-        console.log('base64：',base64,'，源：',this.$base64.decode(base64));
+        let base64 = this.$base64.encode("abc");
+        console.log("base64：", base64, "，源：", this.$base64.decode(base64));
         // console.log(this.$math.add(4.2555,1,3));
         // console.log(this.$func.formatNumber('23.2555'));
         // console.log(this.$func.formatNoSepDate('20210201'));
