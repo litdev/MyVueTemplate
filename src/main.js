@@ -5,6 +5,7 @@ import store from './store'
 import '@/routeGuards' // 路由导航守卫
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import '@/styles/index.scss' // 全局css
 
 Vue.config.productionTip = false
 
@@ -14,8 +15,8 @@ Vue.use(ElementUI)
 import VueLazyLoad from 'vue-lazyload'
 Vue.use(VueLazyLoad, {
   preLoad: 1,
-  error: require('./assets/image-error.png'),
-  loading: require('./assets/image-loading.gif'),
+  error: require('./assets/images/image-error.png'),
+  loading: require('./assets/images/image-loading.gif'),
   attempt: 2,
 })
 

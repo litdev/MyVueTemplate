@@ -20,7 +20,7 @@ let imageIsExist = function (url) {
 }
 
 //默认图片地址
-const defaultImgUrl = require('@/assets/default-image.png');
+const defaultImgUrl = require('@/assets/images/default-image.png');
 
 export const errorImg = async function (el, binding) {
     let imgUrl = el.src;
