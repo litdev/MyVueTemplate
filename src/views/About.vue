@@ -8,7 +8,7 @@
 </template>
 
 <script>
-// import { apiGetUserInfo } from "@/api/user";
+
 export default {
     components: {
         
@@ -36,6 +36,6 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 
 </style>

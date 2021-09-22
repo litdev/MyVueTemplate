@@ -1,13 +1,13 @@
 <template>
-  <div>
-      测试组件 - {{ this.$const.MyConst }}
-  </div>
+  <el-footer>
+      底部
+  </el-footer>
 </template>
 
 <script>
 
 export default {
-    name: "Test",
+    name: "app-footer",
     props: {
         demoPropsList: {
             type: Array,

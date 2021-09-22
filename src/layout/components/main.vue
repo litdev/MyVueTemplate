@@ -1,13 +1,13 @@
 <template>
-  <div>
-      测试组件 - {{ this.$const.MyConst }}
-  </div>
+  <el-main>
+      <router-view />
+  </el-main>
 </template>
 
 <script>
 
 export default {
-    name: "Test",
+    name: "app-main",
     props: {
         demoPropsList: {
             type: Array,
