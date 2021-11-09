@@ -24,7 +24,7 @@ service.interceptors.request.use(
       // config.headers['X-Token'] = getToken()
       config.headers = {
         'Content-Type': 'application/json',
-        tokenHeaderName: cookieToken, //携带token参数
+        [tokenHeaderName]: cookieToken, //携带token参数
       }
     }
     if (config.showLoading) {
