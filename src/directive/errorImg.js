@@ -2,11 +2,11 @@
  * 检测图片是否存在
  * @param url
  */
-let imageIsExist = function (url) {
+ function imageIsExist(url) {
     return new Promise((resolve) => {
         var img = new Image();
         img.onload = function () {
-            if (this.complete == true) {
+            if (this.complete == true){
                 resolve(true);
                 img = null;
             }
@@ -18,15 +18,15 @@ let imageIsExist = function (url) {
         img.src = url;
     })
 }
-
-//默认图片地址
-const defaultImgUrl = require('@/assets/images/default-image.png');
-
-export const errorImg = async function (el, binding) {
-    let imgUrl = el.src;
-    let exists = await imageIsExist(imgUrl);
-    if (!exists) {
-        el.setAttribute('src',defaultImgUrl);
+// 使用方法：<img :src="$const.Default_Error_Image" v-realImg="item.ImagePathUrl">
+// :src为默认图，v-realImg为目标图
+export const realImg = async function (el, binding) {
+    let imgURL = binding.value;//获取图片地址
+    if (imgURL) {
+        let exist = await imageIsExist(imgURL);
+        if (exist) {
+            el.setAttribute('src', imgURL);
+        }
     }
 }
 
